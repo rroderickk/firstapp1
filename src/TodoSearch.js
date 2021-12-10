@@ -1,9 +1,12 @@
 import React from "react";
+import "./TodoSearch.css";
 
 function TodoSearch() {
 	return (
 		<React.Fragment>
-			<h2>TodoSearch</h2>
+			<h2 className='TodoSearchCss'>TodoSearch
+			<input className="TodoSearchCssBarr" placeholder="$$$$$$$$$$$$$$$$$" />
+			</h2>
 		</React.Fragment>
 	);
 }
