@@ -1,4 +1,5 @@
 .TodoListCssBanner {
+    padding: 1rem;
     font-size: 1.9rem;
     text-align: center;
     background-color: #999eeb10;
@@ -12,18 +13,30 @@
     font-size: 1.9rem;
     color: rgb(999, 255, 187);
     padding-left: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-right: 2em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     -webkit-font-smoothing: antialiased;
 }
 .TodoListCss2 {
     background-color: #444eeb00;
     box-shadow: -2px -2px 92px #999eeb40,-2px -2px 99px #999eeb90;/* Apple #e06c78; */ /*red #ff0000; */
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     -webkit-font-smoothing: antialiased;
     text-shadow: -8px 1px 22px #ff00d4;/* Apple #e06c78; */ /*red #ff0000; */
     list-style: none;
-    padding: 0 0 56px 0;
+    padding: 1rem;
 
 }
+.TodoListCssBannerF {
+    padding: 1rem;
+    font-size: 1.9rem;
+    text-align: center;
+    background-color: #999eeb10;
+	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */ rgb(91, 187, 255); /*Apple #e06c78 *//*Red #c43336 #ff0000; */
+    text-shadow: -8px 1px 110px #ff00d4;/* Apple #e06c78; */ /*red #ff0000; */
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
