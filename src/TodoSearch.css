@@ -8,7 +8,14 @@
 	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */ rgb(91, 187, 255); /*Apple #e06c78 *//*Red #c43336 #ff0000; */
     text-shadow: 2px 19px 2px #999eeb40, 2px -10px 10px #e06c78; /* Apple #e06c78; */ /*red #ff0000; */
 
+}.TodoSearchCss:hover {
+    text-align: center;
+    background-color: transparent;
+    box-shadow: 2px 2px 12px 2px #fff;/* Apple #e06c78; */ /*red #ff0000; */
+	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */ rgb(11, 987, 255); /*Apple #e06c78 *//*Red #c43336 #ff0000; */
+    text-shadow: 19px 2px 14px rgb(11,987,255), -1px 1px 130px #ff00d4, -8px 1px 220px rgb(11,987,255);/* Apple #e06c78; */ /*red #ff0000; */
 }
+
 .TodoSearchCssBarr {
     font-size: 1.3em;
     margin: 1rem;
@@ -17,5 +24,11 @@
 	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */ rgb(91, 187, 255); /*Apple #e06c78 *//*Red #c43336 #ff0000; */
     text-shadow: 2px 19px 2px #999eeb40, 2px -10px 10px #e06c78; /* Apple #e06c78; */ /*red #ff0000; */
     border: none ;
+    border-radius: 4px;
+    outline: none;
     border-color: transparent;
+}.TodoSearchCssBarr:hover {
+    box-shadow: 2px 2px 12px 2px #fff;/* Apple #e06c78; */ /*red #ff0000; */
+	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */ rgb(11, 987, 255); /*Apple #e06c78 *//*Red #c43336 #ff0000; */
+    text-shadow: 19px 2px 14px rgb(11,987,255), -1px 1px 130px #ff00d4, -8px 1px 220px rgb(11,987,255);/* Apple #e06c78; */ /*red #ff0000; */
 }

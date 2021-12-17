@@ -1,0 +1,78 @@
+.TodoItem {
+	background-color: transparent;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.TodoItem-p {
+    font-size: 24px;
+	margin: -8px 0px 0px 50px;
+	width: calc(100% - 80px);
+}
+.TodoItem-p--complete {
+	text-decoration: line-through;
+}
+
+.Icon {
+	margin: -20px 0px 0px 10px;
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: bold;
+	/* background-color: #CCC;  */
+}
+
+.Icon-check {
+	position: absolute;
+	left: 20px;
+    text-shadow: 
+    .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
+    .1vw 0vw   0vw #f25757, .2vw 0vw   0vw #f25757, .4vw 0vw   0vw #f25757,
+    .1vw 0vw  .1vw #f25757, .2vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
+    .1vw 0vw   2vw #f25757, .2vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757, 
+    .1vw 0vw   1vw #e50b0b, .2vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b, 
+    .1vw 0vw   5vw #e50b0b, .2vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
+    .1vw 0vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b, .4vw 0vw  10vw #e50b0b;
+    
+}
+.Icon-check:hover {color:red;}
+
+.Icon-check--active {
+	color: #00ff08;
+}
+
+.Icon-delete {
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: bold;
+	/* background-color: #CCC;  */
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+
+.Icon-deleted {
+	margin: -31px 0px 0px 13px;
+	font-size: 2em;
+	position: absolute;
+	right: 21px;
+}
+.Icon-delete:hover {
+    background-color: transparent;
+	color: goldenrod;
+    text-shadow: 
+    .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
+    .1vw 0vw   0vw #f25757, .2vw 0vw   0vw #f25757, .4vw 0vw   0vw #f25757,
+    .1vw 0vw  .1vw #f25757, .2vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
+    .1vw 0vw   2vw #f25757, .2vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757, 
+    .1vw 0vw   1vw #e50b0b, .2vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b, 
+    .1vw 0vw   5vw #e50b0b, .2vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
+    .1vw 0vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b, .4vw 0vw  10vw #e50b0b;
+}
