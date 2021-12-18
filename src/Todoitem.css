@@ -13,6 +13,8 @@
 }
 .TodoItem-p--complete {
 	text-decoration: line-through;
+	text-decoration-color: rgb(244, 236, 236);
+    text-shadow: 2px 2px 16px #ffff;
 }
 
 .Icon {
@@ -27,19 +29,36 @@
 	position: absolute;
 	left: 20px;
     text-shadow: 
-    .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
-    .1vw 0vw   0vw #f25757, .2vw 0vw   0vw #f25757, .4vw 0vw   0vw #f25757,
-    .1vw 0vw  .1vw #f25757, .2vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
-    .1vw 0vw   2vw #f25757, .2vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757, 
-    .1vw 0vw   1vw #e50b0b, .2vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b, 
-    .1vw 0vw   5vw #e50b0b, .2vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
-    .1vw 0vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b, .4vw 0vw  10vw #e50b0b;
+    .1vw 2.7vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
+    .1vw 2.7vw   0vw #f25757, .2vw 1vw   0vw #f25757, .4vw 0vw   0vw #f25757,
+    .1vw 2.7vw  .1vw #f25757, .2vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
+    .1vw 2.7vw   2vw #f25757, .2vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757, 
+    .1vw 2.7vw   1vw #e50b0b, .2vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b, 
+    .1vw 2.7vw   5vw #e50b0b, .2vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
+    .1vw 2.7vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b, .4vw 0vw  10vw #e50b0b;
     
 }
-.Icon-check:hover {color:red;}
+.Icon-check:hover {color:red;
+text-shadow: 
+    -1.1vw 2.7vw .25vw #ffd8d8, .0vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8, 
+    1.1vw 2.7vw   0vw #f25757, .0vw 1vw   0vw #f25757, .4vw 0vw   0vw #f25757,
+    -1.1vw 2.7vw  .1vw #f25757, .0vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
+    1.1vw 2.7vw   2vw #f25757, .0vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757, 
+    -1.1vw 2.7vw   1vw #e50b0b, .0vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b, 
+    1.1vw 2.7vw   5vw #e50b0b, .0vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
+    -1.1vw 2.7vw  10vw #e50b0b, .0vw 0vw  30vw #e50b0b, .4vw 0vw
+}
 
 .Icon-check--active {
-	color: #00ff08;
+	color: #ae1a29;
+    text-shadow: 
+    -1.0vw .8vw .25vw #ffd8d8, .0vw .9vw .25vw #ffd8d8, .4vw 1vw .25vw #ffd8d8, 
+    -1.0vw .8vw   0vw #ffd8d8, .0vw .9vw   0vw #ffd8d8, .4vw 1vw   0vw #ffd8d8,
+    -1.0vw .8vw  .1vw #ffd8d8, .0vw .9vw  .1vw #ffd8d8, .4vw 1vw  .1vw #ffd8d8,
+    -1.0vw .8vw   2vw #ffd8d8, .0vw .9vw   2vw #ffd8d8, .4vw 1vw   2vw #ffd8d8, 
+    -1.0vw .8vw   1vw #ffd8d8, .0vw .9vw   1vw #ffffff, .4vw 1vw   5vw #ffd8d8, 
+    -1.0vw .8vw   5vw #ffd8d8, .0vw .9vw  20vw #ffffff, .4vw 1vw  10vw #ffd8d8,
+    -1.0vw .8vw  10vw #ffd8d8, .0vw .9vw  30vw #ffffff, .4vw 1vw
 }
 
 .Icon-delete {

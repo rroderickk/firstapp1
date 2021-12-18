@@ -11,34 +11,34 @@ const todos = [
 	{ text: c, completed: true },
 	{ text: "Entrenar"+c, completed: false },
 	{ text: "Correr en la bici"+c, completed: false },
-	{ text: "Programar más"+c, completed: false },
-	{ text: "APAP"+d, completed: false },
+	{ text: "Programar más"+c, completed: true },
+	{ text: "APAP"+d, completed: true },
 	{ text: "alias Md CheatSheet"+d, completed: false },
 	{ text: "alias Css CheatSheet "+d, completed: false },
 	{ text: "alias Reacs CheatSheet "+d, completed: false },
-	{ text: d, completed: false },
+	{ text: d+d+c, completed: true },
 ];
 
-function TodoList() {
+function TodoList({todoas,setTodoas}) {
 	return (
 		<React.Fragment>
 			<h4 className="TodoListCssBanner">
 				{c}
 			</h4>
-
-			<ul className="TodoListCss2">
-				{todos.map((todo) => (
-					<TodoItem key={todo.text} text={todo.text} completed={todo.completed}/>
-				))}
-			</ul>
+					<ul className="TodoListCss2">
+						{todoas.map((todoas) => (
+						<TodoItem 
+						key={todoas.text} 
+						text={todoas.text} 
+						completed={todoas.completed}/>
+						) ) }
+					</ul>
 
 			<p className="TodoListCssBannerF">
-				{c}{<br />}
-				{a}{<br />}
-				{c}
+				{c}{<br />}{a}{<br />}{c}
 			</p>
 		</React.Fragment>
 	);
 }
 
-export { TodoList };
+export { TodoList, todos };

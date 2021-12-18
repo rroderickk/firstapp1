@@ -1,6 +1,5 @@
 .CreateTodoButtonCss {
-	top: 3em;
-	left: 30em;
+	top: 94px;
 	position:fixed ;
 	display: flex;
 	border-radius: 100px;
@@ -16,6 +15,7 @@
 	justify-content: center;
 	overflow: hidden;
 	border: 1px solid var(--clr-neon, #a945c7);
+	right: 24px;
 
 }.CreateTodoButtonCss:hover {
 	cursor: pointer;
