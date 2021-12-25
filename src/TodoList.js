@@ -8,15 +8,15 @@ const d = " Lorem";
 const a = '⠄⠄⠄⠄⠄⠄⠄⢀⣠⣶⣾⣿⣶⣦⣤⣀⠄⢀⣀⣤⣤⣤⣤⣄⠄⠄⠄⠄⠄⠄'+br+'⠄⠄⠄⠄⠄⢀⣴⣿⣿⣿⡿⠿⠿⠿⠿⢿⣷⡹⣿⣿⣿⣿⣿⣿⣷⠄⠄⠄⠄\n⠄⠄⠄⠄⠄⣾⣿⣿⣿⣯⣵⣾⣿⣿⡶⠦⠭⢁⠩⢭⣭⣵⣶⣶⡬⣄⣀⡀⠄⠄ ⠄⠄⠄⡀⠘⠻⣿⣿⣿⣿⡿⠟⠩⠶⠚⠻⠟⠳⢶⣮⢫⣥⠶⠒⠒⠒⠒⠆⠐⠒ ⠄⢠⣾⢇⣿⣿⣶⣦⢠⠰⡕⢤⠆⠄⠰⢠⢠⠄⠰⢠⠠⠄⡀⠄⢊⢯⠄⡅⠂⠄ ⢠⣿⣿⣿⣿⣿⣿⣿⣏⠘⢼⠬⠆⠄⢘⠨⢐⠄⢘⠈⣼⡄⠄⠄⡢⡲⠄⠂⠠⠄ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣥⣀⡁⠄⠘⠘⠘⢀⣠⣾⣿⢿⣦⣁⠙⠃⠄⠃⠐⣀'+br+' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\nCheatMode: ; $$,$$;######;   $$,$$;;         $$,$$;♦♦♦♦;     $$,$$;alias: $$ bash2021 CHEATSHEET:         bashcs; $$ html52021 CHEATSHEET:                html5; $$ js2019 CHEATSHEET:           jscs; $$ node CHEATSHEET:     nodecs; $$ git CHEATSHEET:              gitcs $$ git2021 CHEATSHEET:                  gitcs2021; $$,$$;######;   $$,$$;;         $$,$$;♦♦♦♦;     $$,$$;';
 
 const todos = [
-	{ text: c, completed: true },
+	{ text: c, completed: false },
 	{ text: "Entrenar"+c, completed: false },
 	{ text: "Correr en la bici"+c, completed: false },
-	{ text: "Programar más"+c, completed: true },
-	{ text: "APAP"+d, completed: true },
+	{ text: "Programar más"+c, completed: false },
+	{ text: "APAP"+d, completed: false },
 	{ text: "alias Md CheatSheet"+d, completed: false },
 	{ text: "alias Css CheatSheet "+d, completed: false },
 	{ text: "alias Reacs CheatSheet "+d, completed: false },
-	{ text: d+d+c, completed: true },
+	{ text: d+d+c, completed: false },
 ];
 
 
@@ -41,7 +41,7 @@ function TodoList({todoas,setTodoas}) {
 				{c}
 			</h4>
 					<ul className="TodoListCss2">
-						{todos.map((todoas) => (
+						{todoas.map((todoas) => (
 						<TodoItem 
 						key={todoas.text} 
 						text={todoas.text} 
