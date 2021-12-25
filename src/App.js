@@ -23,20 +23,6 @@ function TodoMachine() {
 		})
 	};
 	
-	const completeTodos = (text) => {
-		const todoIndex = todos.findIndex(todo => todo.text == text);
-		todos[todoIndex].completed = true;
-		/* todos[todoIndex] = {
-			text: todos[todoIndex].text,
-			completed: true,
-		} */
-
-		const newTodos = [...todos];
-		newTodos[todoIndex].completed = true;
-		setTodoas(newTodos);
-
-	}
-
 	return (
 		<React.Fragment>
 			{<TodoSearch 
@@ -50,7 +36,6 @@ function TodoMachine() {
 			{<TodoList 
 				todoas={searchedTodos}
 				setTodoas={setTodoas}
-				onComplete={ () => completeTodos(todos.text)  }
 			/>}
 		{<CreateTodoButton />}
 		</React.Fragment>

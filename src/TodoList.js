@@ -19,18 +19,34 @@ const todos = [
 	{ text: d+d+c, completed: true },
 ];
 
+
+
 function TodoList({todoas,setTodoas}) {
+	const completeTodos = (text) => {
+		const todoIndex = todos.findIndex(todo => todo.text === text);
+		todos[todoIndex].completed = true;
+		/* todos[todoIndex] = {
+			text: todos[todoIndex].text,
+			completed: true,
+		} */
+
+		const newTodos = [...todos];
+		newTodos[todoIndex].completed = true;
+		setTodoas(newTodos);
+
+	}
 	return (
 		<React.Fragment>
 			<h4 className="TodoListCssBanner">
 				{c}
 			</h4>
 					<ul className="TodoListCss2">
-						{todoas.map((todoas) => (
+						{todos.map((todoas) => (
 						<TodoItem 
 						key={todoas.text} 
 						text={todoas.text} 
-						completed={todoas.completed}/>
+						completed={todoas.completed}
+						onCompletes={ () => completeTodos(todoas.text)  }/>
 						) ) }
 					</ul>
 
