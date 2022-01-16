@@ -62,9 +62,10 @@ function TodoList({todoas,setTodoas}) { 				//! a data la hemos sacado a pasear 
 //! ─┴┘└─┘┴─┘
 	const deleteTodos = (text) => {
 		const todoIndex = todoas.findIndex(todo => todo.text === text);   //! Encontrar index del elemento si existe en la data [en este caso el arreglo de datos todoas que viene por parametro]
-		todoas[todoIndex].completed = true; 							  //! Verificar si está completado
 		const newTodos = [...todoas];									  //! Nuevo arreglo
+		todoas[todoIndex].completed = true; 							  //! Verificar si está completado
 		newTodos.splice(todoIndex, 1);									  //! Del nuevo arreglo quito el elemnento del cual tengo su index
+		console.log('pan',newTodos)
 		setTodoas(newTodos);											  //! Actualizar estado
 		// function deleteTodo(text){
 			// 	const newTodos = todos.filter(todo => todo.text !== text)

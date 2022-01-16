@@ -6,14 +6,14 @@ import { todos,TodoList } from "./TodoList";
 
 function TodoMachine() {
 	const [todoas,setTodoas] = React.useState(todos); 
-	const [searchValue,setSearchValue] = React.useState("");
+	const [searchValue,setSearchValue] = React.useState(``);
 
 	const completedTodos = todoas.filter(todo => !!todo.completed).length;
 	const totalTodos = todoas.length;
 
 	let searchedTodos = []; 
 	if (!searchValue.length >=1) {
-		searchedTodos = todoas;
+		searchedTodos = [...todoas];
 	} else {
 		searchedTodos =  todoas.filter(todoas => {
 			const todoText = todoas.text.toLowerCase()
