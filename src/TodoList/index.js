@@ -1,6 +1,6 @@
 //todo ╦╦╔╦╗╔═╗╔═╗╦═╗╔╦╗
 import React from "react";
-import { TodoItem } from "./TodoItem"; 				//todo║║║║╠═╝║ ║╠╦╝ ║║║║║╠═╝║ ║╠╦╝ ║
+import { TodoItem } from "../TodoItem"; 				//todo║║║║╠═╝║ ║╠╦╝ ║║║║║╠═╝║ ║╠╦╝ ║
 import  "./TodoList.css";
 //todo ╩╩╩ ╩╩  ╚═╝╩╚═ ╩
 
