@@ -1,7 +1,13 @@
+//todo ╦╦╔╦╗╔═╗╔═╗╦═╗╔╦╗
 import React from "react";
-import { TodoItem } from "./TodoItem";
+import { TodoItem } from "./TodoItem"; 				//todo║║║║╠═╝║ ║╠╦╝ ║║║║║╠═╝║ ║╠╦╝ ║
 import  "./TodoList.css";
+//todo ╩╩╩ ╩╩  ╚═╝╩╚═ ╩
 
+
+//* ┌┬┐┌─┐┌┬┐┌─┐
+//*  ││├─┤ │ ├─┤
+//* ─┴┘┴ ┴ ┴ ┴ ┴
 const br='\n';
 const c = ";$$,$$;######;   $$,$$;;         $$,$$;♦♦♦♦;     $$,$$;";
 const d = " Lorem";
@@ -17,21 +23,30 @@ const todos = [
 	{ text: "alias Reacs CheatSheet "+d, completed: false },
 	{ text: d+d+c, completed: false }
 ];
+//* ┌┬┐┌─┐┌┬┐┌─┐
+//*  ││├─┤ │ ├─┤
+//* ─┴┘┴ ┴ ┴ ┴ ┴
 
-function TodoList({todoas,setTodoas}) {
+//! ┌─┐┌─┐┬─┐┌─┐
+//! │  │ │├┬┘├┤
+//! └─┘└─┘┴└─└─┘
+function TodoList({todoas,setTodoas}) { 				//! a data la hemos sacado a pasear al parque adquirío un alias
+//! ┌─┐┌─┐┬─┐┌─┐
+//! │  │ │├┬┘├┤
+//! └─┘└─┘┴└─└─┘
+
 //?┬ ┬┌─┐┌┬┐
 //?│ │├─┘ ││
 //?└─┘┴  ─┴┘
 	const completeTodos = (text) => {
-		const newTodos = [...todoas];
-		const todoIndex = todoas.findIndex(todo => todo.text === text);
+		const newTodos = [...todoas];												//! Copiamos la data
+		const todoIndex = todoas.findIndex(todo => todo.text === text); 			//! Lo ubicamos
 
-		todoas[todoIndex].completed === true ? 
-		newTodos[todoIndex].completed = false :
-		newTodos[todoIndex].completed = true;
+		todoas[todoIndex].completed === true ?  	//! ┌─┐┌─┐┌┬┐┌─┐┬─┐┌─┐┌┐ ┌─┐┬─┐ ! ┌┬┐┬┌─┐┌─┐┬┌┐┌┌─┐  ┌─┐┬ ┬┌─┐┌─┐┬┌─ ! Validamos si está completado
+		newTodos[todoIndex].completed = false :		//! │  │ ││││├─┘├┬┘│ │├┴┐├─┤├┬┘ ! ││││└─┐└─┐│││││ ┬  │  ├─┤├┤ │  ├┴┐ 
+		newTodos[todoIndex].completed = true;		//! └─┘└─┘┴ ┴┴  ┴└─└─┘└─┘┴ ┴┴└─ ! ┴ ┴┴└─┘└─┘┴┘└┘└─┘  └─┘┴ ┴└─┘└─┘┴ ┴
 
-
-		setTodoas(newTodos);
+		setTodoas(newTodos);															//! Actualizamos la data
 		/* todos[todoIndex] = {
 			text: todos[todoIndex].text,
 			completed: true,
@@ -46,16 +61,15 @@ function TodoList({todoas,setTodoas}) {
 //!  ││├┤ │
 //! ─┴┘└─┘┴─┘
 	const deleteTodos = (text) => {
-		const todoIndex = todoas.findIndex(todo => todo.text === text);
-		todoas[todoIndex].completed = true;
-		const newTodos = [...todoas];
-		newTodos.splice(todoIndex, 1);
-
-		setTodoas(newTodos);
+		const todoIndex = todoas.findIndex(todo => todo.text === text);   //! Encontrar index del elemento si existe en la data [en este caso el arreglo de datos todoas que viene por parametro]
+		todoas[todoIndex].completed = true; 							  //! Verificar si está completado
+		const newTodos = [...todoas];									  //! Nuevo arreglo
+		newTodos.splice(todoIndex, 1);									  //! Del nuevo arreglo quito el elemnento del cual tengo su index
+		setTodoas(newTodos);											  //! Actualizar estado
 		// function deleteTodo(text){
 			// 	const newTodos = todos.filter(todo => todo.text !== text)
 			// 	console.log(newTodos)
-			// 	setTodoas(newTodos) //!noMutaLaLista
+			// 	setTodoas(newTodos) 									  //!noMutaLaLista
 			// }
 	}
 //! ┌┬┐┌─┐┬
@@ -94,6 +108,6 @@ function TodoList({todoas,setTodoas}) {
 
 
 
-
-}
-export { TodoList, todos };
+}//todo ╔═╗═╗ ╦╔═╗╔═╗╦═╗╔╦╗
+export { TodoList, todos };//todo ║╣ ╔╩╦╝╠═╝║ ║╠╦╝ ║
+//todo ╚═╝╩ ╚═╩  ╚═╝╩╚═ ╩
