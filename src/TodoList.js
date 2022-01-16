@@ -6,9 +6,8 @@ const br='\n';
 const c = ";$$,$$;######;   $$,$$;;         $$,$$;♦♦♦♦;     $$,$$;";
 const d = " Lorem";
 const a = '⠄⠄⠄⠄⠄⠄⠄⢀⣠⣶⣾⣿⣶⣦⣤⣀⠄⢀⣀⣤⣤⣤⣤⣄⠄⠄⠄⠄⠄⠄'+br+'⠄⠄⠄⠄⠄⢀⣴⣿⣿⣿⡿⠿⠿⠿⠿⢿⣷⡹⣿⣿⣿⣿⣿⣿⣷⠄⠄⠄⠄\n⠄⠄⠄⠄⠄⣾⣿⣿⣿⣯⣵⣾⣿⣿⡶⠦⠭⢁⠩⢭⣭⣵⣶⣶⡬⣄⣀⡀⠄⠄ ⠄⠄⠄⡀⠘⠻⣿⣿⣿⣿⡿⠟⠩⠶⠚⠻⠟⠳⢶⣮⢫⣥⠶⠒⠒⠒⠒⠆⠐⠒ ⠄⢠⣾⢇⣿⣿⣶⣦⢠⠰⡕⢤⠆⠄⠰⢠⢠⠄⠰⢠⠠⠄⡀⠄⢊⢯⠄⡅⠂⠄ ⢠⣿⣿⣿⣿⣿⣿⣿⣏⠘⢼⠬⠆⠄⢘⠨⢐⠄⢘⠈⣼⡄⠄⠄⡢⡲⠄⠂⠠⠄ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣥⣀⡁⠄⠘⠘⠘⢀⣠⣾⣿⢿⣦⣁⠙⠃⠄⠃⠐⣀'+br+' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\nCheatMode: ; $$,$$;######;   $$,$$;;         $$,$$;♦♦♦♦;     $$,$$;alias: $$ bash2021 CHEATSHEET:         bashcs; $$ html52021 CHEATSHEET:                html5; $$ js2019 CHEATSHEET:           jscs; $$ node CHEATSHEET:     nodecs; $$ git CHEATSHEET:              gitcs $$ git2021 CHEATSHEET:                  gitcs2021; $$,$$;######;   $$,$$;;         $$,$$;♦♦♦♦;     $$,$$;';
-
 const todos = [
-	{ text: c, completed: false },
+	{ text: 'uno', completed: false },
 	{ text: "Entrenar"+c, completed: false },
 	{ text: "Correr en la bici"+c, completed: false },
 	{ text: "Programar más"+c, completed: false },
@@ -16,37 +15,71 @@ const todos = [
 	{ text: "alias Md CheatSheet"+d, completed: false },
 	{ text: "alias Css CheatSheet "+d, completed: false },
 	{ text: "alias Reacs CheatSheet "+d, completed: false },
-	{ text: d+d+c, completed: false },
+	{ text: d+d+c, completed: false }
 ];
 
-
-
 function TodoList({todoas,setTodoas}) {
+//?┬ ┬┌─┐┌┬┐
+//?│ │├─┘ ││
+//?└─┘┴  ─┴┘
 	const completeTodos = (text) => {
-		const todoIndex = todos.findIndex(todo => todo.text === text);
-		todos[todoIndex].completed = true;
+		const newTodos = [...todoas];
+		const todoIndex = todoas.findIndex(todo => todo.text === text);
+
+		todoas[todoIndex].completed === true ? 
+		newTodos[todoIndex].completed = false :
+		newTodos[todoIndex].completed = true;
+
+
+		setTodoas(newTodos);
 		/* todos[todoIndex] = {
 			text: todos[todoIndex].text,
 			completed: true,
-		} */
-
-		const newTodos = [...todos];
-		newTodos[todoIndex].completed = true;
-		setTodoas(newTodos);
-
+			}
+		*/
 	}
+//?┬ ┬┌─┐┌┬┐
+//?│ │├─┘ ││
+//?└─┘┴  ─┴┘
+
+//! ┌┬┐┌─┐┬
+//!  ││├┤ │
+//! ─┴┘└─┘┴─┘
+	const deleteTodos = (text) => {
+		const todoIndex = todoas.findIndex(todo => todo.text === text);
+		todoas[todoIndex].completed = true;
+		const newTodos = [...todoas];
+		newTodos.splice(todoIndex, 1);
+
+		setTodoas(newTodos);
+		// function deleteTodo(text){
+			// 	const newTodos = todos.filter(todo => todo.text !== text)
+			// 	console.log(newTodos)
+			// 	setTodoas(newTodos) //!noMutaLaLista
+			// }
+	}
+//! ┌┬┐┌─┐┬
+//!  ││├┤ │
+//! ─┴┘└─┘┴─┘
+
+//! ╦═╗
+//! ╠╦╝
+//! ╩╚═
 	return (
 		<React.Fragment>
 			<h4 className="TodoListCssBanner">
 				{c}
 			</h4>
+
 					<ul className="TodoListCss2">
 						{todoas.map((todoas) => (
 						<TodoItem 
-						key={todoas.text} 
-						text={todoas.text} 
-						completed={todoas.completed}
-						onCompletes={ () => completeTodos(todoas.text)  }/>
+							key={todoas.text} 
+							text={todoas.text} 
+							completed={todoas.completed}
+							onCompletes={() => completeTodos(todoas.text)}
+							onDeletes={() => deleteTodos(todoas.text)}
+						/>
 						) ) }
 					</ul>
 
@@ -55,6 +88,12 @@ function TodoList({todoas,setTodoas}) {
 			</p>
 		</React.Fragment>
 	);
-}
+//! ╦═╗
+//! ╠╦╝
+//! ╩╚═
 
+
+
+
+}
 export { TodoList, todos };

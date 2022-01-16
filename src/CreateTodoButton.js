@@ -9,7 +9,7 @@ function CreateTodoButton(props) {
 		<React.Fragment>
 			<button
 				className="CreateTodoButtonCss"
-				onClick={ () => onClickButton("que es un modal ? msg") }
+				onClick={ () => onClickButton("Modal para insertar los datos del new todo") }
 			><span className="span1"></span><span className="span2"></span><span className="span3"></span><span className="span4"></span>
 				$$
 			</button>

@@ -4,17 +4,16 @@ import { TodoCounter } from "./TodoCounter";
 import { CreateTodoButton } from "./CreateTodoButton"; //import logo from './logo.svg'; //import './App.css';
 import { todos,TodoList } from "./TodoList";
 
-
 function TodoMachine() {
-	const [todoas,setTodoas] = React.useState(todos)
-	const [searchValue,setSearchValue] = React.useState("")
+	const [todoas,setTodoas] = React.useState(todos); 
+	const [searchValue,setSearchValue] = React.useState("");
 
-	const completedTodos = todos.filter(todo => !!todo.completed).length;
-	const totalTodos = todos.length;
+	const completedTodos = todoas.filter(todo => !!todo.completed).length;
+	const totalTodos = todoas.length;
 
 	let searchedTodos = []; 
 	if (!searchValue.length >=1) {
-		searchedTodos = todos;
+		searchedTodos = todoas;
 	} else {
 		searchedTodos =  todoas.filter(todoas => {
 			const todoText = todoas.text.toLowerCase()
@@ -37,7 +36,9 @@ function TodoMachine() {
 				todoas={searchedTodos}
 				setTodoas={setTodoas}
 			/>}
-		{<CreateTodoButton />}
+			{<CreateTodoButton />}
+			{/*//!-- footer -----------------// */}
+			{<img src='../SharedScreenshot.svg' style={{'width': 10+'%', 'display': 'block', 'border-radius': 9+'rem', 'background-color': 'red', 'margin-left': 'auto', 'margin-right': 'auto'}} />}
 		</React.Fragment>
 	);
 }

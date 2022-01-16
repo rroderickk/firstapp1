@@ -2,10 +2,6 @@ import React from "react";
 import "./Todoitem.css";
 
 function TodoItem(props) {
-	const onDelete = () => {
-		alert("Eliminado" + props.text); //--evento
-	};
-
 	return (
 		<React.Fragment>
 			<li className="TodoListCss2">
@@ -18,8 +14,8 @@ function TodoItem(props) {
 				{props.text}
 				</p>
 
-				<span className={`Icon-delete Icon-deleted ${props.completed}`}
-				onClick={onDelete}
+				<span className={`Icon-delete Icon-deleted`}
+				onClick={props.onDeletes}
 				>
 				$
 				</span>
