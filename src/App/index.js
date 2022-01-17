@@ -3,34 +3,37 @@ import { AppUI } from './AppUI';
 import { todos } from "../TodoList";
 	
 function TodoMachine() {
-// //?┬  ┌─┐┌─┐┌─┐┬
-// //?│  │ ││  ├─┤│
-// //?┴─┘└─┘└─┘┴ ┴┴─┘
-// 		const localStorageTodos = localStorage.getItem('TODOS_V1')
-// 		let parsedTodos;
+//?┬  ┌─┐┌─┐┌─┐┬
+//?│  │ ││  ├─┤│
+//?┴─┘└─┘└─┘┴ ┴┴─┘
+//?localStorage.setItem('TODOS_V1', JSON.stringify(todos)); localStorage.seteaItems('base_datos_version#', JSON,stringify(todos))
+
+		const localStorageTodos = localStorage.getItem('TODOS_V1');
+		let parsedTodos;
 	
-// 		if(!localStorage) {
-// 			localStorage.setItem('TODOS_V1', JSON.stringify([]));
-// 			parsedTodos = [];
-// 		} 
-// 		else {
-// 			parsedTodos = JSON.parse(JSON.localStorageTodos)
-// 		}
+		if(!localStorageTodos) {
+			localStorage.setItem('TODOS_V1', JSON.stringify([]));
+			parsedTodos = [];
+		} 
+		else {
+			parsedTodos = JSON.parse(localStorageTodos);
+		}
 	
-// 		/* Puente */
-// 		const saveTodos = newTodos => {
-// 			const stringifiedTodos = JSON.stringify(newTodos);
-// 			localStorageTodos.setItem('TODOS_V1', stringifiedTodos);
-// 			setTodoas(newTodos)
-// 		}
-// //?┬  ┌─┐┌─┐┌─┐┬
-// //?│  │ ││  ├─┤│
-// //?┴─┘└─┘└─┘┴ ┴┴─┘
+		/* Puente */
+		const saveTodos = newTodos => {
+			const stringifiedTodos = JSON.stringify(newTodos);
+			localStorage.setItem('TODOS_V1', stringifiedTodos);
+			setTodoas(newTodos);
+		}
+//?┬  ┌─┐┌─┐┌─┐┬
+//?│  │ ││  ├─┤│
+//?┴─┘└─┘└─┘┴ ┴┴─┘
 
 //**┌─┐┌┬┐┌─┐┌┬┐┌─┐
 //**└─┐ │ ├─┤ │ ├┤
 //**└─┘ ┴ ┴ ┴ ┴ └─┘
-	const [todoas,setTodoas] = React.useState(todos); 
+	const [todoas,setTodoas] = React.useState(parsedTodos); 
+	console.log(parsedTodos)
 	const [searchValue,setSearchValue] = React.useState(``);
 
 	const completedTodos = todoas.filter(todo => !!todo.completed).length;
@@ -61,7 +64,7 @@ function TodoMachine() {
 		newTodos[todoIndex].completed = false :		//! │  │ ││││├─┘├┬┘│ │├┴┐├─┤├┬┘ ! ││││└─┐└─┐│││││ ┬  │  ├─┤├┤ │  ├┴┐ 
 		newTodos[todoIndex].completed = true;		//! └─┘└─┘┴ ┴┴  ┴└─└─┘└─┘┴ ┴┴└─ ! ┴ ┴┴└─┘└─┘┴┘└┘└─┘  └─┘┴ ┴└─┘└─┘┴ ┴
 
-		setTodoas(newTodos);															//! Actualizamos la data
+		saveTodos(newTodos);															//! Actualizamos la data
 		/* todos[todoIndex] = {
 			text: todos[todoIndex].text,
 			completed: true,
@@ -81,7 +84,7 @@ function TodoMachine() {
 		todoas[todoIndex].completed = true; 							  //! Verificar si está completado
 		newTodos.splice(todoIndex, 1);									  //! Del nuevo arreglo quito el elemento del cual tengo su index
 		console.log('pan',newTodos)
-		setTodoas(newTodos);											  //! Actualizar estado
+		saveTodos(newTodos);											  //! Actualizar estado
 		// function deleteTodo(text){
 			// 	const newTodos = todos.filter(todo => todo.text !== text)
 			// 	console.log(newTodos)
@@ -109,5 +112,6 @@ function TodoMachine() {
 			searchedTodos = {searchedTodos}
 		/>
 	);
+
 }
 export { TodoMachine };
