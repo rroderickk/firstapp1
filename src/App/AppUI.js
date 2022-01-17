@@ -10,8 +10,8 @@ function AppUI({
     setSearchValue,
     totalTodos,
     completedTodos,
-    todoas,
     setTodoas,
+    todoas,
     searchedTodos ,
 }) {
 
@@ -26,7 +26,8 @@ function AppUI({
 				completed={completedTodos}
 			/>}
 			{<TodoList 
-				todoas={searchedTodos}
+                searchedTodoas={searchedTodos}
+				todoas={todoas}
 				setTodoas={setTodoas}
 			/>}
 			{<CreateTodoButton />}

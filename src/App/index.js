@@ -26,8 +26,8 @@ function TodoMachine() {
 			setSearchValue={setSearchValue}
 			totalTodos={totalTodos}
 			completedTodos={completedTodos}
-			todoas={searchedTodos}
 			setTodoas={setTodoas}
+			todoas={todoas}
 			searchedTodos = {searchedTodos}
 		/>
 	);
