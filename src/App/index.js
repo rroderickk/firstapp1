@@ -8,23 +8,25 @@ function TodoMachine() {
 //?┴─┘└─┘└─┘┴ ┴┴─┘
 //?localStorage.setItem('TODOS_V1', JSON.stringify(todos)); localStorage.seteaItems('base_datos_version#', JSON,stringify(todos))
 
-		const localStorageTodos = localStorage.getItem('TODOS_V1');
-		let parsedTodos;
-	
-		if(!localStorageTodos) {
-			localStorage.setItem('TODOS_V1', JSON.stringify([]));
-			parsedTodos = [];
-		} 
-		else {
-			parsedTodos = JSON.parse(localStorageTodos);
-		}
-	
-		/* Puente */
-		const saveTodos = newTodos => {
-			const stringifiedTodos = JSON.stringify(newTodos);
-			localStorage.setItem('TODOS_V1', stringifiedTodos);
-			setTodoas(newTodos);
-		}
+	const localStorageTodos = localStorage.getItem('TODOS_V1');
+	let parsedTodos;
+
+	if(!localStorageTodos) {
+		localStorage.setItem('TODOS_V1', JSON.stringify([]));
+		parsedTodos = [];
+	} 
+	else {
+		parsedTodos = JSON.parse(localStorageTodos);
+	}
+
+/*Persistencia *///?           f(_)     <==== estado    <======	   Persistencia   <======||
+/* Puente *///!    		f(DEL,UPD)=> ||=>  estado  ===> Puente ==> localStorage[estado] =||
+
+	const saveTodos = newTodos => {								//todo ╔═╗╦ ╦╔═╗╔╗╔╔╦╗╔═╗
+		const stringifiedTodos = JSON.stringify(newTodos);		//todo ╠═╝║ ║║╣ ║║║ ║ ║╣
+		localStorage.setItem('TODOS_V1', stringifiedTodos);		//todo ╩  ╚═╝╚═╝╝╚╝ ╩ ╚═╝
+		setTodoas(newTodos);
+	}
 //?┬  ┌─┐┌─┐┌─┐┬
 //?│  │ ││  ├─┤│
 //?┴─┘└─┘└─┘┴ ┴┴─┘
