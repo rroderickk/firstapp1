@@ -10,9 +10,12 @@ function AppUI({
     setSearchValue,
     totalTodos,
     completedTodos,
+    completeTodos,
+    deleteTodos,
     setTodoas,
     todoas,
-    searchedTodos ,
+    searchedTodos,
+    //!Primera estacion del paseo
 }) {
 
     return (
@@ -29,6 +32,9 @@ function AppUI({
                 searchedTodoas={searchedTodos}
 				todoas={todoas}
 				setTodoas={setTodoas}
+				completeTodos={completeTodos}
+				deleteTodos={deleteTodos}
+                //!Segunda estacion del paseo
 			/>}
 			{<CreateTodoButton />}
 			{/*//!-- footer -----------------// */}

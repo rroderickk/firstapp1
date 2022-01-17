@@ -30,52 +30,16 @@ const todos = [
 //! ┌─┐┌─┐┬─┐┌─┐
 //! │  │ │├┬┘├┤
 //! └─┘└─┘┴└─└─┘
-function TodoList({todoas,setTodoas,searchedTodoas}) { 				//! a data la hemos sacado a pasear al parque adquirío un alias
+function TodoList({todoas,
+	setTodoas,
+	searchedTodoas,
+	completeTodos,
+	deleteTodos, //!Tercera estacion del paseo
+}) { 				//! a data la hemos sacado a pasear al parque adquirío un alias
 //! ┌─┐┌─┐┬─┐┌─┐
 //! │  │ │├┬┘├┤
 //! └─┘└─┘┴└─└─┘
 
-//?┬ ┬┌─┐┌┬┐
-//?│ │├─┘ ││
-//?└─┘┴  ─┴┘
-	const completeTodos = (text) => {
-		const todoIndex = todoas.findIndex(todo => todo.text === text); 			//! Lo ubicamos
-		const newTodos = [...todoas];												//! Copiamos la data
-
-		newTodos[todoIndex].completed === true ?  	//! ┌─┐┌─┐┌┬┐┌─┐┬─┐┌─┐┌┐ ┌─┐┬─┐ ! ┌┬┐┬┌─┐┌─┐┬┌┐┌┌─┐  ┌─┐┬ ┬┌─┐┌─┐┬┌─ ! Validamos si está completado
-		newTodos[todoIndex].completed = false :				//! │  │ ││││├─┘├┬┘│ │├┴┐├─┤├┬┘ ! ││││└─┐└─┐│││││ ┬  │  ├─┤├┤ │  ├┴┐ 
-		newTodos[todoIndex].completed = true;				//! └─┘└─┘┴ ┴┴  ┴└─└─┘└─┘┴ ┴┴└─ ! ┴ ┴┴└─┘└─┘┴┘└┘└─┘  └─┘┴ ┴└─┘└─┘┴ ┴
-
-		setTodoas(newTodos);															//! Actualizamos la data
-		/* todos[todoIndex] = {
-			text: todos[todoIndex].text,
-			completed: true,
-			}
-		*/
-	}
-//?┬ ┬┌─┐┌┬┐
-//?│ │├─┘ ││
-//?└─┘┴  ─┴┘
-
-//! ┌┬┐┌─┐┬
-//!  ││├┤ │
-//! ─┴┘└─┘┴─┘
-	const deleteTodos = (text) => {
-		const todoIndex = todoas.findIndex(todo => todo.text === text);   //! Encontrar index del elemento si existe en la data [en este caso el arreglo de datos todoas que viene por parametro]
-		const newTodos = [...todoas];									  //! Nuevo arreglo
-		todoas[todoIndex].completed = true; 							  //! Verificar si está completado
-		newTodos.splice(todoIndex, 1);									  //! Del nuevo arreglo quito el elemento del cual tengo su index
-		console.log('pan',newTodos)
-		setTodoas(newTodos);											  //! Actualizar estado
-		// function deleteTodo(text){
-			// 	const newTodos = todos.filter(todo => todo.text !== text)
-			// 	console.log(newTodos)
-			// 	setTodoas(newTodos) 									  //!noMutaLaLista
-			// }
-	}
-//! ┌┬┐┌─┐┬
-//!  ││├┤ │
-//! ─┴┘└─┘┴─┘
 
 //! ╦═╗
 //! ╠╦╝
@@ -94,6 +58,7 @@ function TodoList({todoas,setTodoas,searchedTodoas}) { 				//! a data la hemos s
 							completed={todoas.completed}
 							onCompletes={() => completeTodos(todoas.text)}
 							onDeletes={() => deleteTodos(todoas.text)}
+							//!Cuarta estacion del paseo
 						/>
 						) ) }
 					</ul>
