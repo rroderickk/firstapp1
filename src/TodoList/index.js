@@ -30,8 +30,9 @@ const todos = [
 //! ┌─┐┌─┐┬─┐┌─┐
 //! │  │ │├┬┘├┤
 //! └─┘└─┘┴└─└─┘
-function TodoList({todoas,
-	setTodoas,
+function TodoList({
+	// todoas,
+	// setTodoas,
 	searchedTodoas,
 	completeTodos,
 	deleteTodos, //!Tercera estacion del paseo

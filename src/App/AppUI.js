@@ -12,8 +12,8 @@ function AppUI({
     completedTodos,
     completeTodos,
     deleteTodos,
-    setTodoas,
-    todoas,
+    // setTodoas,
+    // todoas,
     searchedTodos,
     //!Primera estacion del paseo
 }) {
@@ -30,8 +30,8 @@ function AppUI({
 			/>}
 			{<TodoList 
                 searchedTodoas={searchedTodos}
-				todoas={todoas}
-				setTodoas={setTodoas}
+				// todoas={todoas}
+				// setTodoas={setTodoas}
 				completeTodos={completeTodos}
 				deleteTodos={deleteTodos}
                 //!Segunda estacion del paseo
