@@ -30,7 +30,10 @@ const todos = [
 //! ┌─┐┌─┐┬─┐┌─┐
 //! │  │ │├┬┘├┤
 //! └─┘└─┘┴└─└─┘
-function TodoList({todoas,
+function TodoList({
+	error,
+	loading,
+	todoas,
 	setTodoas,
 	searchedTodoas,
 	completeTodos,
@@ -49,6 +52,10 @@ function TodoList({todoas,
 			<h4 className="TodoListCssBanner">
 				{c}
 			</h4>
+
+					{error && <p>Error....</p>}
+					{loading && <p>Loading....</p>}
+					{(!loading && !searchedTodoas.length) && <p>¡Bienvenido crea un todo!....</p>}
 
 					<ul className="TodoListCss2">
 						{searchedTodoas.map((todoas) => (

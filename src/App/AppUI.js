@@ -6,16 +6,18 @@ import { TodoList } from "../TodoList";
 
 
 function AppUI({
-    searchValue,
-    setSearchValue,
-    totalTodos,
-    completedTodos,
-    completeTodos,
-    deleteTodos,
-    setTodoas,
-    todoas,
-    searchedTodos,
-    //!Primera estacion del paseo
+	loading,	
+	error,	
+	searchValue,
+	setSearchValue,
+	totalTodos,
+	completedTodos,
+	completeTodos,
+	deleteTodos,
+	setTodoas,
+	todoas,
+	searchedTodos,
+	//!Primera estacion del paseo
 }) {
 
     return (
@@ -29,16 +31,18 @@ function AppUI({
 				completed={completedTodos}
 			/>}
 			{<TodoList 
-                searchedTodoas={searchedTodos}
+				loading = {loading}
+				error = {error}
+				searchedTodoas={searchedTodos}
 				todoas={todoas}
 				setTodoas={setTodoas}
 				completeTodos={completeTodos}
 				deleteTodos={deleteTodos}
-                //!Segunda estacion del paseo
+				//!Segunda estacion del paseo
 			/>}
 			{<CreateTodoButton />}
 			{/*//!-- footer -----------------// */}
-			{<img src='../SharedScreenshot.svg' style={{'width': 10+'%', 'display': 'block', 'border-radius': 9+'rem', 'background-color': 'red', 'margin-left': 'auto', 'margin-right': 'auto'}} />}
+			{/* {<img src='../SharedScreenshot.svg' style={{'width': 10+'%', 'display': 'block', 'border-radius': 9+'rem', 'background-color': 'red', 'margin-left': 'auto', 'margin-right': 'auto'}} />} */}
 		</React.Fragment>
         
     );
