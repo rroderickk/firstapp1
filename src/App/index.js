@@ -58,7 +58,6 @@ function useLocalStorage(itemName, initialValue) {
 //!║  │ │└─┐ │ │ │║║║╠═╣│ ││ │╠╩╗└─┐
 //!╚═╝└─┘└─┘ ┴ └─┘╩ ╩╩ ╩└─┘└─┘╩ ╩└─┘
 
-
 function TodoMachine() {
 //**┌─┐┌┬┐┌─┐┌┬┐┌─┐
 //**└─┐ │ ├─┤ │ ├┤
@@ -121,25 +120,17 @@ function TodoMachine() {
 //!  ││├┤ │
 //! ─┴┘└─┘┴─┘
 
-	return (
-		<AppUI 
-			//! Esto es un paseo de etiquetas
-			loading={loading}
-			error={error}
-			searchValue={searchValue}
-			setSearchValue={setSearchValue}
-			totalTodos={totalTodos}
-			completeTodos={completeTodos}
-			completedTodos={completedTodos}
-			deleteTodos={deleteTodos}
-			// setTodoas={setTodoas}
-			todoas={todoas}
-			searchedTodos = {searchedTodos}
-		/>
-	);
-	
-}
-export { TodoMachine };
+return (
+<AppUI 
+	//! Esto es un paseo de etiquetas
+	loading={loading} error={error}
+	searchValue={searchValue} setSearchValue={setSearchValue}
+	totalTodos={totalTodos} completeTodos={completeTodos}
+	completedTodos={completedTodos} deleteTodos={deleteTodos}
+	// setTodoas={setTodoas}
+	todoas={todoas} searchedTodos = {searchedTodos}
+/>
+); };	export { TodoMachine };
 
 	//? Manejo de efectos(eventos externos)
 	// React.useEffect( () => { 						//?==> useEffect Renderiza antes, useLayout Renderiza despues
@@ -200,4 +191,3 @@ export { TodoMachine };
 // //?┬  ┌─┐┌─┐┌─┐┬
 // //?│  │ ││  ├─┤│
 // //?┴─┘└─┘└─┘┴ ┴┴─┘
-
