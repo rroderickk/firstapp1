@@ -8,7 +8,7 @@ const { openModal, setOpenModal } = React.useContext(TodoContext);
 
 const onClickButton =()=> setOpenModal(!openModal);
 
-const handleRef     =(param)=> window.scrollTo(0, param);
+// const handleRef     =(param)=> window.scrollTo(0, param); //todo mejorar el efecto de scrolling
 
 return (
 <>
