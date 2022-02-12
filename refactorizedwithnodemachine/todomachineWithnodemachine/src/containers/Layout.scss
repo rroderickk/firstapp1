@@ -1,0 +1,10 @@
+@import "../vars";
+
+.Layout{
+  text-align: center; 
+  display: block;
+  background-color: #000;
+  margin: 4px;
+  max-width: 100vw;
+  font-family: var(--lobster);
+};

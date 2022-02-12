@@ -1,0 +1,80 @@
+.todoItem-box {
+	display: block;
+}
+.TodoItem-p {
+	font-size: 22px;
+	width: 100%;
+}
+.TodoItem-p--complete {
+	text-decoration: line-through;
+	text-decoration-color: rgb(244, 236, 236);
+	text-shadow: 2px 2px 16px #ffff;
+}
+.todoItem-Icon {
+	margin: -20px 0px 0px 10px;
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: bold;
+	font-family: var(--noto)
+}
+.todoItem-Icon-check {
+	position: absolute;
+	left: 20px;
+	text-shadow: 0.1vw 2.7vw 0.25vw #ffd8d8, 0.2vw 0vw 0.25vw #ffd8d8,
+		0.4vw 0vw 0.25vw #ffd8d8, 0.1vw 2.7vw 0vw #f25757, 0.2vw 1vw 0vw #f25757,
+		0.4vw 0vw 0vw #f25757, 0.1vw 2.7vw 0.1vw #f25757,
+		0.2vw 0vw 0.1vw #f25757, 0.4vw 0vw 0.1vw #f25757,
+		0.1vw 2.7vw 2vw #f25757, 0.2vw 0vw 2vw #f25757, 0.4vw 0vw 2vw #f25757,
+		0.1vw 2.7vw 1vw #e50b0b, 0.2vw 0vw 1vw #e50b0b, 0.4vw 0vw 5vw #e50b0b,
+		0.1vw 2.7vw 5vw #e50b0b, 0.2vw 0vw 20vw #e50b0b, 0.4vw 0vw 10vw #e50b0b,
+		0.1vw 2.7vw 10vw #e50b0b, 0.2vw 0vw 30vw #e50b0b, 0.4vw 0vw 10vw #e50b0b;
+}
+.todoItem-Icon-check:hover {
+	color: red;
+	text-shadow: -1.1vw 2.7vw 0.25vw #ffd8d8, 0vw 0vw 0.25vw #ffd8d8,
+		0.4vw 0vw 0.25vw #ffd8d8, 1.1vw 2.7vw 0vw #f25757, 0vw 1vw 0vw #f25757,
+		0.4vw 0vw 0vw #f25757, -1.1vw 2.7vw 0.1vw #f25757, 0vw 0vw 0.1vw #f25757,
+		0.4vw 0vw 0.1vw #f25757, 1.1vw 2.7vw 2vw #f25757, 0vw 0vw 2vw #f25757,
+		0.4vw 0vw 2vw #f25757, -1.1vw 2.7vw 1vw #e50b0b, 0vw 0vw 1vw #e50b0b,
+		0.4vw 0vw 5vw #e50b0b, 1.1vw 2.7vw 5vw #e50b0b, 0vw 0vw 20vw #e50b0b,
+		0.4vw 0vw 10vw #e50b0b, -1.1vw 2.7vw 10vw #e50b0b, 0vw 0vw 30vw #e50b0b,
+		0.4vw 0vw;
+}
+.todoItem-Icon-check--active {
+	color: #ae1a29;
+	text-shadow: -1vw 0.8vw 0.25vw #ffd8d8, 0vw 0.9vw 0.25vw #ffd8d8,
+		0.4vw 1vw 0.25vw #ffd8d8, -1vw 0.8vw 0vw #ffd8d8, 0vw 0.9vw 0vw #ffd8d8,
+		0.4vw 1vw 0vw #ffd8d8, -1vw 0.8vw 0.1vw #ffd8d8, 0vw 0.9vw 0.1vw #ffd8d8,
+		0.4vw 1vw 0.1vw #ffd8d8, -1vw 0.8vw 2vw #ffd8d8, 0vw 0.9vw 2vw #ffd8d8,
+		0.4vw 1vw 2vw #ffd8d8, -1vw 0.8vw 1vw #ffd8d8, 0vw 0.9vw 1vw #ffffff,
+		0.4vw 1vw 5vw #ffd8d8, -1vw 0.8vw 5vw #ffd8d8, 0vw 0.9vw 20vw #ffffff,
+		0.4vw 1vw 10vw #ffd8d8, -1vw 0.8vw 10vw #ffd8d8, 0vw 0.9vw 30vw #ffffff,
+		0.4vw 1vw;
+}
+.todoItem-Icon-delete {
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: bold;
+	font-family: var(--orbitron);
+	text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+		0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.todoItem-Icon-deleted {
+	margin: -51px 0px auto auto;
+	font-size: 2em;
+	position: absolute;
+	right: 21px;
+}
+.todoItem-Icon-delete:hover {
+	background-color: transparent;
+	color: goldenrod;
+	text-shadow: 0.1vw 0vw 0.25vw #ffd8d8, 0.2vw 0vw 0.25vw #ffd8d8,
+		0.4vw 0vw 0.25vw #ffd8d8, 0.1vw 0vw 0vw #f25757, 0.2vw 0vw 0vw #f25757,
+		0.4vw 0vw 0vw #f25757, 0.1vw 0vw 0.1vw #f25757, 0.2vw 0vw 0.1vw #f25757,
+		0.4vw 0vw 0.1vw #f25757, 0.1vw 0vw 2vw #f25757, 0.2vw 0vw 2vw #f25757,
+		0.4vw 0vw 2vw #f25757, 0.1vw 0vw 1vw #e50b0b, 0.2vw 0vw 1vw #e50b0b,
+		0.4vw 0vw 5vw #e50b0b, 0.1vw 0vw 5vw #e50b0b, 0.2vw 0vw 20vw #e50b0b,
+		0.4vw 0vw 10vw #e50b0b, 0.1vw 0vw 10vw #e50b0b, 0.2vw 0vw 30vw #e50b0b,
+		0.4vw 0vw 10vw #e50b0b;
+}

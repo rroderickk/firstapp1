@@ -1,0 +1,45 @@
+.TodoCounter-title {
+	margin: 0;
+  padding-right: 32px;
+  padding-bottom: 13px;
+	font-size: 4em;
+	text-align: center;
+	/* background-color: #999eeb10; */
+	/*box-shadow: 2px 2px 12px 2px #999eeb90; /* Apple #e06c78; */ /*red #ff0000; */
+	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */
+		rgb(11, 987, 255); /*Apple #e06c78 */ /*Red #c43336 #ff0000; */
+	font-style: italic;
+	text-shadow: 19px 2px 04px #ff0000, -8px 1px 130px #ff00d4,
+		-8px 1px 220px #ff00d4; /* Apple #e06c78; */ /*red #ff0000; */
+}
+.TodoCounter-title:hover {
+	background-color: transparent;
+	box-shadow: 2px 2px 12px 2px #fff; /* Apple #e06c78; */ /*red #ff0000; */
+	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */
+		rgb(11, 987, 255); /*Apple #e06c78 */ /*Red #c43336 #ff0000; */
+	text-shadow: 19px 2px 14px rgb(11, 987, 255), -1px 1px 130px #ff00d4,
+		-8px 1px 220px rgb(11, 987, 255); /* Apple #e06c78; */ /*red #ff0000; */
+}
+.TodoCounterCss1 {
+	background-color: #999eeb10;
+	font-size: 2rem;
+	color: rgb(999, 255, 187);
+	padding-left: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-shadow: -8px 1px 22px #ff00d4; /* Apple #e06c78; */ /*red #ff0000; */
+}
+.TodoCounter-info {
+	margin-top: -1.5rem;
+	color: #fff;
+}
+.TodoCounter-Counter {
+  /* centro dentroTop de todolist
+  /* position: absolute; */
+  /* left: 50%; */
+  /* padding-top: 9rem; */
+  margin: 0;
+  margin-top: -9px;
+	margin-bottom: -1.3rem ;
+	text-shadow: 0px -2px 22px #ffff, -1px 1px 130px #ffff, -8px 1px 220px #fff; /* Apple #e06c78; */ /*red #ff0000; */
+}
