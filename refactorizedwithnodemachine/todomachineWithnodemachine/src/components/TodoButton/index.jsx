@@ -14,7 +14,7 @@ return (
 <>
   <button
   className="TodoButton"
-  onClick={     ()=>{onClickButton(); handleRef(1000)}     }
+  onClick={     ()=>{onClickButton(); /*handleRef(1000)*/ }     }
   >
   <span className="span1"></span>
   <span className="span2"></span>
