@@ -39,22 +39,14 @@ font-weight: 400;
   outline-color: #61DAFA;
 }
 
-.TodoForm-buttonContainer {
-  margin-top: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.TodoForm-button {
+.TodoForm-button  {
   cursor: pointer;
   display: inline-block;
-  font-size: 20px;
+  font-size: 1px;
   color: #202329;
   font-weight: 400;
-  width: 120px;
-  height: 48px;
+  width: 220px;
+  height: 88px;
   border-radius: 2px;
   border: none;
   font-family: 'Montserrat';

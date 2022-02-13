@@ -65,10 +65,7 @@ return ( <>
 
 {!!openModal && (
   <Modal>
-    {<p>
-      {searchedTodos[0]?.text}
-      {<TodoForm/>}
-    </p>}
+    {<TodoForm/>}
   </Modal>
 )}
 
