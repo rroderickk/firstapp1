@@ -1,8 +1,8 @@
 import React from "react";
-import { TodoContext } from '../TodoContext';
+import { TodoContext } from "../TodoContext";
 import "./TodoButton.scss"; //!(:@)====>styles;
 
-const TodoButton    =()=> {
+const TodoButton =()=> {
 
 const { openModal, setOpenModal } = React.useContext(TodoContext);
 

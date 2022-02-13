@@ -29,14 +29,30 @@ if (!searchValue.length >= 1) {
   });
 };
 
-const completeTodo =(text)=> {
+const completeTodo =(text,id)=> {
+  // console.log(id) //todo debuggar
   const todoIndex = todos.findIndex(todo => todo.text === text);
   const newTodos = [...todos];
+  // newTodos[todoIndex].completed =!newTodos[todoIndex].completed
+  newTodos[todoIndex].completed === true ?
+  newTodos[todoIndex].completed = false :
   newTodos[todoIndex].completed = true;
   saveTodos(newTodos);
 };
 
-const deleteTodo =(text)=> {
+const addTodo =(text)=> {
+  const newTodos = [...todos];
+  newTodos.push({
+    id: newTodos.length + 1,
+    completed: false,
+    text,
+  });
+  saveTodos(newTodos);
+  console.log(newTodos) //todo debuggar
+};
+
+const deleteTodo =(text,id)=> {
+  // console.log(id) //todo debuggar
   const todoIndex = todos.findIndex(todo => todo.text === text);
   const newTodos = [...todos];
   newTodos.splice(todoIndex, 1);
@@ -49,8 +65,8 @@ return (
   completedTodos, searchValue,
   setSearchValue, searchedTodos,
   completeTodo, deleteTodo,
-  openModal,
-  setOpenModal,
+  openModal, setOpenModal,
+  addTodo,
 }}>
   {props.children}
 </TodoContext.Provider>

@@ -1,6 +1,6 @@
 {
 	"name": "todoMachine",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "todoMachineRefactorizedWithNodeMachine",
 	"main": ".src/index.js",
 	"scripts": {
@@ -12,17 +12,18 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/rroderickk/firstapp1"
 	},
 	"keywords": [
 		"react",
 		"javascript",
-		"shop"
+		"todomachine",
+		"nodemachine"
 	],
 	"author": "CheatModes4 rroderickk@gmail.com",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/rroderickk/nodemachine/issues"
+		"url": "https://github.com/rroderickk/firstapp1/issues"
 	},
 	"dependencies": {
 		"@babel/core": "7.16.12",

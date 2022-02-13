@@ -2,6 +2,7 @@ import React from "react";
 import { TodoList    } from "../components/TodoList";    import { TodoCounter } from "../components/TodoCounter";
 import { TodoSearch  } from "../components/TodoSearch";  import { TodoButton  } from "../components/TodoButton";
 import { TodoContext } from '../components/TodoContext'; import { TodoItem    } from '../components/TodoItem';
+import { TodoForm    } from "../components/TodoForm";
 import { Modal       } from '../components/Modal'; //? document.body.style.zoom = "200%";
 
 /*//!todo tamañoventana
@@ -41,7 +42,7 @@ const Home =()=> { const {
   completeTodo, deleteTodo,
   openModal,
 } = React.useContext(TodoContext); 
-
+document.body.style.zoom = "121%"; //!zoom
 return ( <> 
 {<TodoSearch/>}
 {<TodoCounter/>}
@@ -52,13 +53,13 @@ return ( <>
   {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!  </p>}
 
         {searchedTodos.map(todo => (
-                              <TodoItem
-                                key={todo.text}
-                                text={todo.text}
-                                completed={todo.completed}
-                                onComplete={() => completeTodo(todo.text)}
-                                onDelete={() => deleteTodo(todo.text)}
-                              />
+                            <TodoItem
+                              key={todo.id}
+                              text={todo.text}
+                              completed={todo.completed}
+                              onComplete={() => completeTodo(todo.text, todo.id)}
+                              onDelete={() =>   deleteTodo(todo.text,   todo.id)}
+                            />
         ))}
 </TodoList>}
 
@@ -66,6 +67,7 @@ return ( <>
   <Modal>
     {<p>
       {searchedTodos[0]?.text}
+      {<TodoForm/>}
     </p>}
   </Modal>
 )}

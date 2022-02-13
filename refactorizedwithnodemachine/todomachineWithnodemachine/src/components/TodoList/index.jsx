@@ -9,6 +9,7 @@ const TodoList =(props)=> { return (
     <ul className="todoList-ul"> {props.children} </ul>
   </section>
 <div className="todoList-cheatmodes" > <p> {c}{<br />}{a}{<br />}{c} </p> </div>
+{"demo: version 0.0.4"}
 </>
 ); } 
 export { TodoList };

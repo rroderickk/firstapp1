@@ -1,5 +1,5 @@
 import React from "react";
-import "./Todoitem.scss";
+import "./Todoitem.scss"; //!(:@)====>styles;
 
 const TodoItem = (props) => { return (
 
@@ -8,7 +8,7 @@ const TodoItem = (props) => { return (
 <li className="todoItem-li">
   <span 
     className={`todoItem-Icon todoItem-Icon-check ${props.completed && "todoItem-Icon-check--active"}`}
-    onClick={props.onCompletes}>
+    onClick={props.onComplete}>
     @
   </span>
   <p 
@@ -17,7 +17,7 @@ const TodoItem = (props) => { return (
   </p>
   <span 
     className={`todoItem-Icon-delete todoItem-Icon-deleted`}
-    onClick={props.onDeletes}>
+    onClick={props.onDelete}>
     $
   </span>
 </li>
