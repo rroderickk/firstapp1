@@ -1,10 +1,8 @@
-# TodoMachine
+# TODOMACHINE....
+## This file has refactorized with nodeMachine by CheatModes4
+### Deploy
+#### [TodoMachine](https://rroderickk.github.io/todomachine/)
 
-## Simple project Todo toodos todo tododos toDoss theme NeonCity
+<img src="./iPhone.png" class="fit-image">
 
-<img src="TodoMachineV12021-12-09.jpg" alt="Screenshot"/>
-
-<img src="demoV1.2.png" alt="Screenshot"/>
-
-
-##refactorized
+<img src="./iPhone2.png" class="fit-image">
