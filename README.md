@@ -7,4 +7,3 @@
 
 <img src="./iPhone2.png" class="fit-image">
 
-###### new branch gh-pages

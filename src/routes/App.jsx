@@ -12,7 +12,7 @@ const initialState = useInitialState();
 return (
 
 <AppContext.Provider value={initialState}>
-	<BrowserRouter basename="/todomachine">
+	<BrowserRouter basename="/firstapp1">
 		<Layout>
 				<TodoProvider>
 			<Routes>
