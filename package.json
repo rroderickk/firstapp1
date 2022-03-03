@@ -1,6 +1,6 @@
 {
 	"name": "todoMachine",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "todoMachineRefactorizedWithNodeMachine",
 	"homepage": "https://rroderickk.github.io/firstapp1",
 	"main": ".src/index.js",
