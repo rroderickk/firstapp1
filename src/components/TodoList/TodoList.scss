@@ -1,52 +1,37 @@
 .todoList-box {
-	display: block;
-	gap: 1rem;
-	grid-auto-rows: 22;
-	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	display: flex;
+	flex-direction: column;
+	margin-top: 0.4rem;
+	margin-bottom: 1rem;
 }
 .todoList-banner {
+	min-width: 230px;
 	font-size: 1.3rem;
-	margin-top: -4px;
-	margin-bottom: 0;
-	text-align: center;
-	/* background-color: #999eeb10; */
-	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */
-		rgb(91, 187, 255); /*Apple #e06c78 */ /*Red #c43336 #ff0000; */
+	color: rgb(91, 187, 255);
 	text-shadow: -8px 1px 110px #ff00d4; /* Apple #e06c78; */ /*red #ff0000; */
-	list-style: none;
 }
-
 .todoList-ul {
+	padding: 2.0rem 2.0rem;
 	color: rgb(999, 255, 187);
-	border-left: 2em;
-	padding-right: 2em;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	/* list-style: none; */
+	list-style: none; 
+	min-width: 230px;
+	width: 100%;
+	max-width: 900px;
 }
-
 .todoList-ul:hover {
 	color: #ffff;
 	box-shadow: -2px -2px 92px #999eeb40, -2px -2px 99px #999eeb90; /* Apple #e06c78; */ /*red #ff0000; */
 	text-shadow: -8px 1px 22px #ffff; /* Apple #e06c78; */ /*red #ff0000; */
 }
 .todoList-cheatmodes {
-	align-items: center;
-	justify-content: space-between;
-	text-align: center;
+	font-size: 0.8rem;
+	width: auto;
+	min-width: 300px;
+	max-width: 300px;
+	padding: 0 5.6rem;
+	margin: 0 auto;
+	margin-top: 1rem;
+	color: var(--white);
 }
-.todoList-cheatmodes > p {
-	color: #fff;
-	box-sizing: border-box;
-	margin: 28px;
-}
-@media (min-width: 400px) { 
-	.todoList-cheatmodes > p {
-		margin: 0px;
-	}
-}
-@media (min-width: 800px) { /* en el celular no se ve igual*/
-	.todoList-cheatmodes > p {
-		margin: 0 320px 0 320px;
-	}
-}
+// @media (min-width: 400px) {}
+// @media (min-width: 900px) {}

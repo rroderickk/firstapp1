@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { TodoList    } from "../components/TodoList";    import { TodoCounter } from "../components/TodoCounter";
 import { TodoSearch  } from "../components/TodoSearch";  import { TodoButton  } from "../components/TodoButton";
 import { TodoContext } from '../components/TodoContext'; import { TodoItem    } from '../components/TodoItem';
 import { TodoForm    } from "../components/TodoForm";
 import { Modal       } from '../components/Modal'; //? document.body.style.zoom = "200%";
+import "../_vars.scss";
 
 /*//!todo tamañoventana
 function tamVentana() {
@@ -36,13 +37,26 @@ const zoom = (param) => document.body.style.zoom = param;
 tam[0]<500 ? zoom("100%") : zoom("133%");
 */
 
+const Home =()=> { 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┌─┐┌─┐┌─┐┌┬┐  ┌─┐┌─┐┌─┐┌─┐┌─┐┌┬┐┌─┐┬!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┌─┘│ ││ ││││  ├┤ ├┤ ├┤ ├┤ │   │ └─┐│!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!└─┘└─┘└─┘┴ ┴  └─┘└  └  └─┘└─┘ ┴ └─┘o!!!!!
+var zoom=window.innerWidth;
+const [width, setWidth] = useState(zoom);   //? ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗███████╗
+useEffect(() => {                           //! ██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝██╔════╝
+var zoom=window.innerWidth;                 //* ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ ███████╗
+zoom<430?  zoom="90%" : zoom="201%";//!zoom //? ██║███╗██║██║   ██║██╔══██╗██╔═██╗ ╚════██║
+// console.log(zoom, window.innerWidth)     //! ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗███████║
+setWidth(document.body.style.zoom=zoom)     //?  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+}, [zoom])
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┌─┐┌─┐┌─┐┌┬┐  ┌─┐┌─┐┌─┐┌─┐┌─┐┌┬┐┌─┐┬!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┌─┘│ ││ ││││  ├┤ ├┤ ├┤ ├┤ │   │ └─┐│!!!!!
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!└─┘└─┘└─┘┴ ┴  └─┘└  └  └─┘└─┘ ┴ └─┘o!!!!!
 
-const Home =()=> { const {
-  error, loading, searchedTodos,
-  completeTodo, deleteTodo,
-  openModal,
-} = React.useContext(TodoContext); 
-document.body.style.zoom = "121%"; //!zoom
+const { error, loading, searchedTodos, 
+        completeTodo, deleteTodo, openModal, 
+      } = React.useContext(TodoContext); 
+
 return ( <> 
 {<TodoSearch/>}
 {<TodoCounter/>}
@@ -71,7 +85,5 @@ return ( <>
 
 {<TodoButton />}
 
-
-{<h1>footer</h1>}
-
+<footer><h6>footer</h6></footer>
 </> ); }; export { Home };

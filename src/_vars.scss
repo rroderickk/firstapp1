@@ -15,3 +15,25 @@
   --orbitron: 'Orbitron', sans-serif;
   --roboto: 'Roboto', sans-serif;
 };
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+ 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);/* rgba(0,0,0,0.004) */
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+	text-rendering: optimizeLegibility;
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+html{
+	font-size: 60.2%;
+}
+@media screen and (min-width: 900px){ //!todo
+	// html{
+	// 	font-size: 97.2%;
+	// }
+}

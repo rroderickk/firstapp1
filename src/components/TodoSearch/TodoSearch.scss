@@ -1,22 +1,7 @@
-.TodoSearchCss {
-	font-size: 1.3em;
-	position: relative;
-	text-align: center;
-	background-color: #999eeb10;
-};
-.TodoSearchCss:hover {
-	text-align: center;
-	background-color: transparent;
-	box-shadow: 2px 2px 12px 2px #fff; /* Apple #e06c78; */ /*red #ff0000; */
-	color: /* #999eeb10 */ /* Orange  *//* #ff9d22; *//* #23d363; *//* Blue; */
-		rgb(11, 987, 255); /*Apple #e06c78 */ /*Red #c43336 #ff0000; */
-	text-shadow: 19px 2px 14px rgb(11, 987, 255), -1px 1px 130px #ff00d4,
-		-8px 1px 220px rgb(11, 987, 255); /* Apple #e06c78; */ /*red #ff0000; */
-};
 .TodoSearch-input {
 	text-align: center;
 	width: 100%;
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	font-family: var(--orbitron);
 	background-color: transparent;
 	box-shadow: 1px -1px -1px 1px #999eeb40; /* Apple #e06c78; */ /*red #ff0000; */
@@ -27,8 +12,9 @@
 	border-radius: 2px;
 	outline: none;
 	border: none;
-
-	margin-bottom: 9px;
+	margin-top: 1.3rem;
+	margin-bottom: 0.9rem;
+	min-width: 230px;
 };
 .TodoSearch-input:hover {
 	box-shadow: 2px 2px 12px 2px #fff; /* Apple #e06c78; */ /*red #ff0000; */
