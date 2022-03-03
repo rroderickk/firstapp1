@@ -9,5 +9,4 @@ return ReactDOM.createPortal(
     {children}
   </div>,
   document.getElementById("modal")
-); }; 
-export { Modal };
+) }; export { Modal };
