@@ -1,12 +1,10 @@
 import React from "react";
 import "./TodoForm.scss"; //!(:@)====>styles;
 
-
-const TodoForm =({ addTodo, openModal, setOpenModal })=> {
+const TodoForm =({ addTodo, setOpenModal })=> {
   const [newTodoValue, setNewTodoValue] = React.useState("");
 
-  const onSubmit =(event)=> { 
-    event.preventDefault();
+  const onSubmit =(event)=> { event.preventDefault();
     if(newTodoValue.length <= 0)return;
     addTodo(newTodoValue); 
     setOpenModal(false); //todo mejorar

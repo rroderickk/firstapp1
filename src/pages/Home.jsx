@@ -1,14 +1,15 @@
 import React, { useState, useEffect} from "react";
 import { useTodos    } from "./useTodos"; 
-import { TodoHeader  } from "../components/TodoHeader";
-import { TodoSearch  } from "../components/TodoSearch"; 
-import { TodoCounter } from "../components/TodoCounter";
-import { TodoList    } from "../components/TodoList";    
-import { TodoItem    } from "../components/TodoItem";
-import { Modal       } from "../components/Modal"; //? document.body.style.zoom = "200%";
-import { TodoForm    } from "../components/TodoForm";
-import { TodoButton  } from "../components/TodoButton";
-import "../_vars.scss";
+import { TodoHeader  } from "@components/TodoHeader";
+import { TodoSearch  } from "@components/TodoSearch"; 
+import { TodoCounter } from "@components/TodoCounter";
+import { TodoList    } from "@components/TodoList";    
+import { TodoItem    } from "@components/TodoItem";
+import { Modal       } from "@components/Modal"; //? document.body.style.zoom = "200%";
+import { TodoForm    } from "@components/TodoForm";
+import { TodoButton  } from "@components/TodoButton";
+import { TodosError, TodosLoading, TodosEmpty  } from "@components/Skeletons";
+import "../_vars.scss";//!(:@)====>styles;
 
 const Home =()=> { 
 const [width, setWidth] = useState(zoom);   
@@ -20,17 +21,9 @@ zoom<430?  zoom="90%" : zoom="202%";        //* ██║█z█╗██║█�
 setWidth(document.body.style.zoom=zoom)     //?  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 }, [zoom]);
 
-const { 
-  error, 
-  loading, 
-  searchedTodos, 
-  completeTodo, 
-  deleteTodo,
-  openModal,
-  totalTodos, 
-  completedTodos,
-  searchValue,
-  setSearchValue,
+const { error, loading, searchedTodos, completeTodo, 
+  deleteTodo, openModal, totalTodos, completedTodos,
+  searchValue, setSearchValue,
   setOpenModal,
   addTodo,
 } = useTodos(); return ( <> 
@@ -40,10 +33,27 @@ const {
   <TodoCounter totalTodos={totalTodos}   completedTodos={completedTodos} />
 </TodoHeader>
 
+{/* <TodoList
+        error={error               }
+      loading={loading             }
+searchedTodos={searchedTodos       }
+      onError={()=> <TodosError  />}
+    onLoading={()=> <TodosLoading/>}
+ onEmptyTodos={()=> <TodosEmpty  />}
+render={ (todo,index)=> (
+    <TodoItem
+      key={index}
+      text={todo.text}
+      completed={todo.completed}
+      onComplete={() => completeTodo(todo.text, todo.id)}
+      onDelete={() =>   deleteTodo(todo.text,   todo.id)}
+    />)}
+/> */}
+
 <TodoList>
-  {error     && <p>Desespérate, hubo un error...                    </p>}
-  {loading   && <p>Cargando, no desesperes...               </p>}
-  {(!loading && !searchedTodos.length) && <p>¡Crea tu primer Tarea con el boton $$!  </p>}
+  {error     && <TodosError/>}
+  {loading   && <TodosLoading/>}
+  {(!loading && !searchedTodos.length) && <TodosEmpty/>}
 
   {searchedTodos.map( (todo,index)=> (
     <TodoItem
