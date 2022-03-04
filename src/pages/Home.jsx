@@ -64,6 +64,7 @@ const {
 
 <TodoButton  openModal={openModal} setOpenModal={setOpenModal} />
 
-<footer><h6>footer</h6></footer>
-
+<footer style={{color: "white"}}>
+  <h6>dont look the console</h6>
+</footer>
 </> ); }; export { Home };
