@@ -1,7 +1,7 @@
 import React from "react";
 import "./Todoitem.scss";//!(:@)====>styles;
 
-const TodoItem = (props) => { return ( <>
+const TodoItem =(props)=> { return ( <>
 <section>
 <div className="todoItem-box">
 <li className="todoItem-li">

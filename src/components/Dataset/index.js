@@ -138,7 +138,6 @@ console.log("dont",
 			12: separarCon(" ", "⠀⠀⠀⠀⢸⣿⣀","⣀⣀⣼⡿⢿⣿⣿⣿⣿⣿⡿⣿⣿⡿,"),
 			13: {0:separarCon(" ", "hahahah told you!")},
 			},
-  
 });
 
     // 2: separarCon(" ", ";$$,$$; ###### ; $$,$$ ;;"," $$,$$; ###### $$,$$;"),

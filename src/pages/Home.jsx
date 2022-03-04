@@ -1,43 +1,25 @@
 import React, { useState, useEffect} from "react";
-import { TodoList    } from "../components/TodoList";    import { TodoCounter } from "../components/TodoCounter";
-import { TodoSearch  } from "../components/TodoSearch";  import { TodoButton  } from "../components/TodoButton";
-import { TodoContext } from '../components/TodoContext'; import { TodoItem    } from '../components/TodoItem';
+import { TodoContext } from "../components/TodoContext"; 
+import { TodoHeader  } from "../components/TodoHeader";
+import { TodoSearch  } from "../components/TodoSearch"; 
+import { TodoCounter } from "../components/TodoCounter";
+import { TodoList    } from "../components/TodoList";    
+import { TodoItem    } from "../components/TodoItem";
+import { Modal       } from "../components/Modal"; //? document.body.style.zoom = "200%";
 import { TodoForm    } from "../components/TodoForm";
-import { Modal       } from '../components/Modal'; //? document.body.style.zoom = "200%";
+import { TodoButton  } from "../components/TodoButton";
 import "../_vars.scss";
 
-/*//!todo tamañoventana
-function tamVentana() {
-  var tam = [0, 0];
-  if (typeof window.innerWidth != 'undefined')
-  {
-    tam = [window.innerWidth,window.innerHeight];
-  }
-  else if (typeof document.documentElement != 'undefined'
-      && typeof document.documentElement.clientWidth !=
-      'undefined' && document.documentElement.clientWidth != 0)
-  {
-    tam = [
-      document.documentElement.clientWidth,
-      document.documentElement.clientHeight
-    ];
-  }
-  else   {
-    tam = [
-      document.getElementsByTagName('body')[0].clientWidth,
-      document.getElementsByTagName('body')[0].clientHeight
-    ];
-  }
-  return tam;
-}
-const tam = tamVentana();
-
-const zoom = (param) => document.body.style.zoom = param;
-
-tam[0]<500 ? zoom("100%") : zoom("133%");
-*/
-
 const Home =()=> { 
+const [width, setWidth] = useState(zoom);   
+var zoom=window.innerWidth;                 //? ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗███████╗
+useEffect(() => {                           //! ██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝██╔════╝
+var zoom=window.innerWidth;                 //@ ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ ███████╗
+zoom<430?  zoom="90%" : zoom="202%";        //* ██║█z█╗██║██║oom██║██╔══██╗██╔═██╗ ╚════██║
+// console.log(zoom, window.innerWidth)     //! ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗███████║
+setWidth(document.body.style.zoom=zoom)     //?  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+}, [zoom]);
+
 const { 
   error, 
   loading, 
@@ -45,50 +27,37 @@ const {
   completeTodo, 
   deleteTodo,
   openModal,
-} = React.useContext(TodoContext); 
+  totalTodos, 
+  completedTodos,
+  searchValue,
+  setSearchValue,
+} = React.useContext(TodoContext); return ( <> 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┌─┐┌─┐┌─┐┌┬┐  ┌─┐┌─┐┌─┐┌─┐┌─┐┌┬┐┌─┐┬!!!!!
-//!                                        ┌─┘│ ││ ││││  ├┤ ├┤ ├┤ ├┤ │   │ └─┐│!!!!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!└─┘└─┘└─┘┴ ┴  └─┘└  └  └─┘└─┘ ┴ └─┘o!!!!!
-var zoom=window.innerWidth;
-const [width, setWidth] = useState(zoom);   //? ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗███████╗
-useEffect(() => {                           //! ██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝██╔════╝
-var zoom=window.innerWidth;                 //* ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ ███████╗
-zoom<430?  zoom="90%" : zoom="202%";//!zoom //? ██║███╗██║██║   ██║██╔══██╗██╔═██╗ ╚════██║
-// console.log(zoom, window.innerWidth)     //! ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗███████║
-setWidth(document.body.style.zoom=zoom)     //?  ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
-}, [zoom])
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!┌─┐┌─┐┌─┐┌┬┐  ┌─┐┌─┐┌─┐┌─┐┌─┐┌┬┐┌─┐┬!!!!!
-//!                                        ┌─┘│ ││ ││││  ├┤ ├┤ ├┤ ├┤ │   │ └─┐│!!!!!
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!└─┘└─┘└─┘┴ ┴  └─┘└  └  └─┘└─┘ ┴ └─┘o!!!!!
+<TodoHeader>
+  <TodoSearch  searchValue={searchValue} setSearchValue={setSearchValue} />
+  <TodoCounter totalTodos={totalTodos}   completedTodos={completedTodos} />
+</TodoHeader>
 
-return ( <> 
-{<TodoSearch/>}
-{<TodoCounter/>}
-
-{<TodoList>
+<TodoList>
   {error     && <p>Desespérate, hubo un error...                    </p>}
-  {loading   && <p>Estamos cargando, no desesperes...               </p>}
-  {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!  </p>}
+  {loading   && <p>Cargando, no desesperes...               </p>}
+  {(!loading && !searchedTodos.length) && <p>¡Crea tu primer Tarea con el boton $$!  </p>}
 
-        {searchedTodos.map(todo => (
-                            <TodoItem
-                              key={todo.id}
-                              text={todo.text}
-                              completed={todo.completed}
-                              onComplete={() => completeTodo(todo.text, todo.id)}
-                              onDelete={() =>   deleteTodo(todo.text,   todo.id)}
-                            />
-        ))}
-</TodoList>}
+  {searchedTodos.map( (todo,index)=> (
+    <TodoItem
+      key={index}
+      text={todo.text}
+      completed={todo.completed}
+      onComplete={() => completeTodo(todo.text, todo.id)}
+      onDelete={() =>   deleteTodo(todo.text,   todo.id)}
+    />
+  ))}
+</TodoList>
 
-{!!openModal && (
-  <Modal>
-    {<TodoForm/>}
-  </Modal>
-)}
+{!!openModal && ( <Modal><TodoForm/></Modal> )}
 
-{<TodoButton />}
+<TodoButton />
 
 <footer><h6>footer</h6></footer>
+
 </> ); }; export { Home };

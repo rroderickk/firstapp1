@@ -1,9 +1,7 @@
-import   React         from "react";
-import { TodoContext } from "../TodoContext";
-import './TodoCounter.scss';//!(:@)====>styles;
+import React from "react";
+import "./TodoCounter.scss";//!(:@)====>styles;
 
-const TodoCounter =()=> { 
-const { totalTodos, completedTodos } = React.useContext(TodoContext);
+const TodoCounter =({totalTodos, completedTodos})=> { 
 return ( <>
 <section>
 <p  className="TodoCounter-Counter">{completedTodos}$${totalTodos}  </p>

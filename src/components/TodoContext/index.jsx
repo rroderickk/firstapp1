@@ -48,7 +48,7 @@ const addTodo =(text)=> {
     text,
   });
   saveTodos(newTodos);
-  console.log(newTodos) //todo debuggar
+  // console.log(newTodos) //todo debuggar
 };
 
 const deleteTodo =(text,id)=> {
