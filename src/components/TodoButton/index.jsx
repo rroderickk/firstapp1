@@ -1,20 +1,16 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import "./TodoButton.scss"; //!(:@)====>styles;
 
-const TodoButton =()=> {
-
-const { openModal, setOpenModal } = React.useContext(TodoContext);
-
+const TodoButton =({ openModal, setOpenModal })=> {
 const onClickButton =()=> setOpenModal(!openModal);
 
-// const handleRef     =(param)=> window.scrollTo(0, param); //todo mejorar el efecto de scrolling
+// const handleRef =(param)=> window.scrollTo(0, param); //todo mejorar el efecto de scrolling
 
 return (
 <>
   <button
   className="TodoButton"
-  onClick={     ()=>{onClickButton(); /*handleRef(1000)*/ }     }
+  onClick={()=>{onClickButton(); /*handleRef(1000)*/ }     }
   >
   <span className="span1"></span>
   <span className="span2"></span>

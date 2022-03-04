@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { TodoContext } from "../components/TodoContext"; 
+import { useTodos    } from "./useTodos"; 
 import { TodoHeader  } from "../components/TodoHeader";
 import { TodoSearch  } from "../components/TodoSearch"; 
 import { TodoCounter } from "../components/TodoCounter";
@@ -31,7 +31,9 @@ const {
   completedTodos,
   searchValue,
   setSearchValue,
-} = React.useContext(TodoContext); return ( <> 
+  setOpenModal,
+  addTodo,
+} = useTodos(); return ( <> 
 
 <TodoHeader>
   <TodoSearch  searchValue={searchValue} setSearchValue={setSearchValue} />
@@ -54,9 +56,13 @@ const {
   ))}
 </TodoList>
 
-{!!openModal && ( <Modal><TodoForm/></Modal> )}
+{!!openModal && (
+<Modal>
+  <TodoForm addTodo={addTodo} openModal={openModal} setOpenModal={setOpenModal}/>
+</Modal> 
+)}
 
-<TodoButton />
+<TodoButton  openModal={openModal} setOpenModal={setOpenModal} />
 
 <footer><h6>footer</h6></footer>
 
