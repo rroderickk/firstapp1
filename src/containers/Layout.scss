@@ -1,4 +1,3 @@
-
 .Layout{
   display: flex;
   flex-direction: column;
@@ -7,7 +6,16 @@
   margin: auto auto;
   height: 100vh;
   padding: 0 0rem;
+  padding-top: 4rem;
   max-width: 100rem;
   min-width: 230px;
   font-family: var(--lobster);
+  justify-content: center;
 };
+
+@media screen and (min-width: 900px){
+  .Layout{
+    justify-content: normal;
+    padding-top: 1rem;
+  }
+}
