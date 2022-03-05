@@ -1,9 +1,7 @@
 # TODOMACHINE....
 ## This file has refactorized with nodeMachine by CheatModes4
-### Deploy
 #### [![TodoMachine](https://vercel.com/button)](https://rroderickk.github.io/firstapp1)
-
-<img src="public/assets/logos/TodoMachineIconWb.svg" width="100px" class="fit-image">
+#### [![logo](public/assets/logos/TodoMachineIconWb.svg)](https://rroderickk.github.io/firstapp1)
 
 <img src="./iPhone.png" class="fit-image">
 
