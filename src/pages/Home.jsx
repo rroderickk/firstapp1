@@ -49,23 +49,7 @@ render={ (todo,index)=> (
       onDelete={() =>   deleteTodo(todo.text,   todo.id)}
     />)}
 />
-{/* 
-<TodoList>
-  {error     &&   <TodosError/>}
-  {loading   && <TodosLoading/>}
-  {(!loading && !searchedTodos.length) && <TodosEmpty/>}
 
-  {searchedTodos.map( (todo,index)=> (
-    <TodoItem
-      key={index}
-      text={todo.text}
-      completed={todo.completed}
-      onComplete={() => completeTodo(todo.text, todo.id)}
-      onDelete={() =>   deleteTodo(todo.text,   todo.id)}
-    />
-  ))}
-</TodoList>
- */}
 {!!openModal && (
 <Modal>
   <TodoForm addTodo={addTodo} openModal={openModal} setOpenModal={setOpenModal}/>
