@@ -33,7 +33,7 @@ const { error, loading, searchedTodos, completeTodo,
   <TodoCounter totalTodos={totalTodos}   completedTodos={completedTodos} />
 </TodoHeader>
 
-{/* <TodoList
+<TodoList
         error={error               }
       loading={loading             }
 searchedTodos={searchedTodos       }
@@ -48,10 +48,10 @@ render={ (todo,index)=> (
       onComplete={() => completeTodo(todo.text, todo.id)}
       onDelete={() =>   deleteTodo(todo.text,   todo.id)}
     />)}
-/> */}
-
+/>
+{/* 
 <TodoList>
-  {error     && <TodosError/>}
+  {error     &&   <TodosError/>}
   {loading   && <TodosLoading/>}
   {(!loading && !searchedTodos.length) && <TodosEmpty/>}
 
@@ -65,7 +65,7 @@ render={ (todo,index)=> (
     />
   ))}
 </TodoList>
-
+ */}
 {!!openModal && (
 <Modal>
   <TodoForm addTodo={addTodo} openModal={openModal} setOpenModal={setOpenModal}/>
